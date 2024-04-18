@@ -1,0 +1,26 @@
+class Box:
+    def __init__(self,name,roll):
+        self.name=name
+        self.roll=roll
+
+class student:
+    def __init__(self,fees):
+        self.fees=fees
+ 
+class Box2(Box):
+    def __init__(self,name,roll,marks,fees):
+        self.marks=marks
+        student.__init__(self,fees)
+        Box.__init__(self,name,roll)
+obj2=Box2("shiva",12,23,20000)
+print(obj2.fees)
+print(obj2.marks)
+print(obj2.name)
+print(obj2.roll)
+
+obj3=Box2("Raj kumar",45,234,10000)
+print(obj3.name)
+print(obj3.roll)
+print(obj3.marks)
+print(obj3.fees)
+
