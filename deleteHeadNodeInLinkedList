@@ -1,0 +1,38 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+def printLinkedList(head):
+    curr=head
+    while curr != None:
+        print(curr.data,end=" -->")
+        curr=curr.next
+    print(None)
+def insertAtHeadOfLinkedList(head,ele):
+    newBlock=Node(ele)
+
+    if head == None:
+        return newBlock
+
+    newBlock.next = head
+    return newBlock
+
+def  deleteHeadNodeInLinkedList(head):
+    if head==None:
+        return None
+
+    secondNode=head.next
+    head.next=None
+    return secondNode
+
+
+
+l=[11,22,33,44,55,66,77,88,99,110]
+head=None
+
+for ele in l:
+    head = insertAtHeadOfLinkedList(head,ele)
+
+printLinkedList(head)
+head=deleteHeadNodeInLinkedList(head)
