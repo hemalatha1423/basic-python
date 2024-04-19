@@ -1,0 +1,27 @@
+class Cart:
+    def __init__(self,id,imageurl, devicetype,price,rating):
+        self.id=id
+        self.image=imageurl
+        self.devicetype=devicetype
+        self.price=price
+        self.rating=rating
+        
+    def printalldetials(self):
+        print("imageUrl:",self.image)
+        print("deviceType:",self.devicetype)
+        print("price:",self.price)
+        print("rating:",self.rating)
+
+print("Product - 1 :")
+product1=Cart(121,"Dummy-url 1","Mobile",56000,4.5)
+product1.printalldetials()
+print()
+
+print("Product - 2 :")
+product2=Cart(132,"Dummy-url 2","Laptop",94000,4.8)
+product2.printalldetials()
+print()
+
+print("Product - 3 :")
+product3=Cart(154,"Dummy-url 3","Smart-watch",18000,3.5)
+product3.printalldetials()
