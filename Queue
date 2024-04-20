@@ -1,0 +1,52 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+def printQueue(head):
+    if head==None:
+        print("queue is empty")
+        return
+    curr=head
+    while curr != None:
+        print(curr.data,end=" ")
+        curr=curr.next
+    print()
+
+
+def enQueue(head,ele):
+    newBlock=Node(ele)
+    
+    if head==None:
+        return newBlock
+
+    tail=head
+    while tail.next!=None:
+         tail=tail.next
+    tail.next=newBlock
+    return head
+
+def deQueue(head):
+    # this function deletes first 
+     if head==None:
+         print("Queue Is Empty ,nothing to delete")
+         return None
+     print("Deleting",head.data)
+     secondNode=head.next
+     head.next=None
+     return secondNode
+
+    
+
+
+n=int(input())
+l=list(map(int,input().split()))
+head=None
+
+for ele in l:
+      head =enQueue (head,ele)
+printQueue(head)
+head=deQueue(head)
+printQueue(head)
+
+    
