@@ -1,0 +1,83 @@
+class Node:
+    def __init__(self, data):
+        self.data = data 
+        self.next = None 
+ 
+ 
+def push(top, value):
+    print(value, "inserted")
+    newBlock = Node(value)
+    if top == None:
+        return newBlock
+ 
+    newBlock.next = top 
+    return newBlock
+ 
+
+def pop(top):
+    if top == None:
+        print("Stack is empty")
+        return None
+    
+    print(top.data)
+    secondNode = top.next 
+    top.next = None 
+    return secondNode
+
+def firstvalue(top):
+    if top == None:
+        print("Stack is empty")
+        return
+    print(top.data)
+
+def printStack(top):
+    if top == None:
+        print("Stack is empty")
+        return 
+    curr = top 
+    while curr != None:
+        print(curr.data, end = " ")
+        curr = curr.next 
+    print()
+    
+def printStackEmpty(top):
+    if top ==None:
+        print("Stack is empty")
+    else:
+        print("Stack is not empty")
+    
+    
+stack = []
+n = int(input().strip())
+while n > 0:
+    word = list(map(int, input().split()))
+    l = word[0]
+    if l == 1:
+        num = word[1]
+        stack.insert(0, num)
+        print(num, "inserted")
+    elif l == 2:
+        if len(stack) == 0:
+            print("Stack is empty")
+        else:
+            print(stack[0])
+    elif l == 3:
+        if len(stack) == 0:
+            print("Stack is empty")
+        else:
+            print(stack[0])
+            stack.pop(0)
+    elif l == 4:
+        if len(stack) == 0:
+            print("Stack is empty")
+        else:
+            for ele in stack:
+                print(ele, end = " ")
+            print()
+    else:
+        if len(stack) == 0:
+            print("Stack is empty")
+        else:
+            print("Stack is not empty")
+      
+    n -= 1
