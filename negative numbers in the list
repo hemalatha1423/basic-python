@@ -1,0 +1,10 @@
+# 3. write a python program to accept list of integer and print total count of negative numbers in the list
+
+
+num=int(input())
+nums=list(map(int,input().split()))
+count=0
+for n in range(0,num):
+    if nums[n]<0:
+        count=count+1
+print(count)
