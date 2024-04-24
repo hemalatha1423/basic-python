@@ -1,0 +1,9 @@
+#2. write a python program to accept list of integer and print the total count of numbers which are divisible by 5
+
+num=int(input())
+count=0
+nums=list(map(int,input().split()))
+for i in range(0,num):
+    if nums[i]%5==0:
+        count=count+1
+print(count)
