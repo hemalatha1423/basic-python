@@ -1,0 +1,9 @@
+# 1.write a python program to accept list of integer and print the total sum  odd elements within this list
+
+num=int(input())
+nums=list(map(int,input().split()))
+sum=0
+for i in range (0,num):
+    if nums[i]%2!=0:
+        sum=sum+nums[i]
+print(sum)
