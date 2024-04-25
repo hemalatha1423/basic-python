@@ -1,0 +1,35 @@
+class TreeNode:
+    def __init__(self, data):
+        self.data = data 
+        self.left = None 
+        self.right = None 
+ 
+def inserInToBST(root,ele):
+    if root==None:
+        newBlock=TreeNode(ele)
+        return newBlock
+
+
+    if root.data<ele:
+        root.right=inserInToBST(root.right,ele)
+    else:
+        root.left=inserInToBST(root.left,ele)
+    return root
+
+def printInOrder(root):
+    if root == None:
+        return
+ 
+
+    printInOrder(root.left)
+    print(root.data, end = " ")
+    printInOrder(root.right) 
+ 
+num=int(input())
+nums = list(map(int, input().split()))
+root=None
+for ele in nums:
+    root=inserInToBST(root,ele)
+
+printInOrder(root)
+ 
